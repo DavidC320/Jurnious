@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3v0e8ak7p1cn"]
+
+[ext_resource type="Script" path="res://scripts/Spawner.gd" id="1_ggwfa"]
+[ext_resource type="PackedScene" uid="uid://fn82sqn4gslf" path="res://assets/blends/Bush.blend" id="2_bf47m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e8knm"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_504jx"]
+radius = 5.0
+
+[node name="Spawner" type="StaticBody3D" groups=["Spawner"]]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_ggwfa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_e8knm")
+
+[node name="Bush" parent="." instance=ExtResource("2_bf47m")]
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_504jx")

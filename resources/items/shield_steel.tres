@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://ciqqer86p6faf"]
+
+[ext_resource type="Script" path="res://scripts/resources/item_resource.gd" id="1_1wh31"]
+[ext_resource type="Texture2D" uid="uid://c1fxd35egeac" path="res://resources/textures/shield.tres" id="1_42hbs"]
+
+[resource]
+script = ExtResource("1_1wh31")
+item_name = "Steel Shield"
+item_type = "shield"
+coin_value = 10
+defense = 5
+speed = 2.0
+health = 15
+damage = 5
+color = Color(1, 1, 1, 1)
+_model = null
+pick_up_sprite = ExtResource("1_42hbs")

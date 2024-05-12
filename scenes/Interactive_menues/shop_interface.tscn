@@ -1,0 +1,219 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1p0nsxqsmq68"]
+
+[ext_resource type="PackedScene" uid="uid://cagh0d5katoqy" path="res://scenes/widgets/item_inventory_widgit.tscn" id="1_cm533"]
+[ext_resource type="Script" path="res://scenes/Interactive_menues/shop_interface.gd" id="1_k4t78"]
+[ext_resource type="Texture2D" uid="uid://c1fxd35egeac" path="res://resources/textures/shield.tres" id="2_i447f"]
+[ext_resource type="Texture2D" uid="uid://bvnbbii4u5ss0" path="res://resources/textures/armour.tres" id="3_5intw"]
+[ext_resource type="Texture2D" uid="uid://3cjooqneajkv" path="res://resources/textures/sword.tres" id="4_wj1gg"]
+
+[node name="ShopInterface" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_k4t78")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.137255, 0.180392, 0.129412, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "SHOP"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Inventory"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(256, 268)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 8
+
+[node name="ItemInventoryWidgit" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_cm533")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit2" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_cm533")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit3" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_cm533")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit4" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_cm533")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit5" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_cm533")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit6" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_cm533")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit7" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_cm533")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit8" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_cm533")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit9" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_cm533")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit10" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_cm533")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit11" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_cm533")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit12" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_cm533")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit13" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_cm533")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit14" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_cm533")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit15" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_cm533")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit16" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("1_cm533")]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Coins - 0"
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Double click to sell item."
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Shop"
+horizontal_alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer"]
+custom_minimum_size = Vector2(256, 268)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 38
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="BuyShield" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "   Steel Shield - 40$"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_i447f")
+offset = Vector2(16, 16)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="BuyArmour" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Steel Armour - 40$"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2/MarginContainer"]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("3_5intw")
+offset = Vector2(16, 16)
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="BuySword" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "   Steel Sword - 40$"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer"]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("4_wj1gg")
+offset = Vector2(16, 16)
+
+[node name="Error" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Exit Menu"
+
+[node name="ClickTimer" type="Timer" parent="."]
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/BuyShield" to="." method="_on_buy_shield_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2/BuyArmour" to="." method="_on_buy_armour_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/BuySword" to="." method="_on_buy_sword_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="ClickTimer" to="." method="_on_click_timer_timeout"]

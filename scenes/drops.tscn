@@ -1,0 +1,116 @@
+[gd_scene load_steps=5 format=3 uid="uid://b116msfgm888t"]
+
+[ext_resource type="Script" path="res://scripts/drops.gd" id="1_70f72"]
+[ext_resource type="PackedScene" uid="uid://cagh0d5katoqy" path="res://scenes/widgets/item_inventory_widgit.tscn" id="2_f5nym"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7n7j4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vwbm5"]
+
+[node name="RigidBody3D" type="RigidBody3D"]
+collision_layer = 8
+script = ExtResource("1_70f72")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_7n7j4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_vwbm5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+visible = false
+offset = Vector2(0, -60)
+transform = Transform2D(1, 0, 0, 1, 0, -60)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 438.0
+offset_top = 190.0
+offset_right = 714.0
+offset_bottom = 458.0
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Drop - double click to take"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(256, 268)
+layout_mode = 2
+size_flags_horizontal = 4
+horizontal_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/VBoxContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="ItemInventoryWidgit" parent="CanvasLayer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("2_f5nym")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit2" parent="CanvasLayer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("2_f5nym")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit3" parent="CanvasLayer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("2_f5nym")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit4" parent="CanvasLayer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("2_f5nym")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit5" parent="CanvasLayer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("2_f5nym")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit6" parent="CanvasLayer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("2_f5nym")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit7" parent="CanvasLayer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("2_f5nym")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit8" parent="CanvasLayer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("2_f5nym")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit9" parent="CanvasLayer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("2_f5nym")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit10" parent="CanvasLayer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("2_f5nym")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit11" parent="CanvasLayer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("2_f5nym")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit12" parent="CanvasLayer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("2_f5nym")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit13" parent="CanvasLayer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("2_f5nym")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit14" parent="CanvasLayer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("2_f5nym")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit15" parent="CanvasLayer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("2_f5nym")]
+layout_mode = 2
+
+[node name="ItemInventoryWidgit16" parent="CanvasLayer/VBoxContainer/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("2_f5nym")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Add all to Inventory"
+
+[node name="ClickTimer" type="Timer" parent="."]
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="ClickTimer" to="." method="_on_click_timer_timeout"]
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]

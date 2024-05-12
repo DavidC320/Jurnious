@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://cagh0d5katoqy"]
+
+[ext_resource type="Script" path="res://scripts/widgits/item_inventory_widgit.gd" id="1_hm6ta"]
+[ext_resource type="Texture2D" uid="uid://5shopq7e6qdx" path="res://resources/textures/Empty.tres" id="2_qnbgi"]
+
+[node name="ItemInventoryWidgit" type="MarginContainer"]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_hm6ta")
+
+[node name="SelectedRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 2
+color = Color(1, 1, 0, 0.239216)
+
+[node name="Highlight" type="ColorRect" parent="."]
+visible = false
+layout_mode = 2
+color = Color(1, 1, 1, 0.239216)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(32, 32)
+scale = Vector2(2, 2)
+texture = ExtResource("2_qnbgi")
+
+[node name="Value" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "0$"
+horizontal_alignment = 2
+
+[node name="Amount" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "00"
+horizontal_alignment = 2
+
+[node name="MouseDetector" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[connection signal="mouse_entered" from="MouseDetector" to="." method="_on_mouse_detector_mouse_entered"]
+[connection signal="mouse_exited" from="MouseDetector" to="." method="_on_mouse_detector_mouse_exited"]

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://db6sv8s7wbkw1"]
+
+[ext_resource type="Script" path="res://scripts/resources/item_resource.gd" id="1_0nhjl"]
+[ext_resource type="Texture2D" uid="uid://bvnbbii4u5ss0" path="res://resources/textures/armour.tres" id="1_tclmn"]
+
+[resource]
+script = ExtResource("1_0nhjl")
+item_name = "Iron Armour"
+item_type = "equipment"
+coin_value = 20
+defense = 3
+speed = 2.0
+health = 10
+damage = 5
+color = Color(0.396078, 0.396078, 0.396078, 1)
+_model = null
+pick_up_sprite = ExtResource("1_tclmn")

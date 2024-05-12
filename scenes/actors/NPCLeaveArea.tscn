@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqfwgbnuwjdw6"]
+
+[ext_resource type="Script" path="res://scripts/NPCLeaveArea.gd" id="1_aceou"]
+[ext_resource type="PackedScene" uid="uid://cvw7001060x02" path="res://assets/blends/player.blend" id="2_67d3b"]
+[ext_resource type="Script" path="res://scripts/widgits/ChangeSceneButton.gd" id="3_7n2hs"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_433ij"]
+
+[node name="NpcLeaveArea" type="StaticBody3D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_aceou")
+
+[node name="player" parent="." instance=ExtResource("2_67d3b")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_433ij")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Go Back to the Hub?"
+horizontal_alignment = 1
+
+[node name="Hub" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Yes
+"
+script = ExtResource("3_7n2hs")
+scene = "res://scenes/maps/Hub.tscn"
+
+[node name="Exit" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "No
+"
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

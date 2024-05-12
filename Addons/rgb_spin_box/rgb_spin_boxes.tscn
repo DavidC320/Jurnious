@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmeecjlkr6dim"]
+
+[ext_resource type="Script" path="res://Addons/rgb_spin_box/rgb_spin_boxes.gd" id="1_rwkaf"]
+
+[node name="RGBSpinBoxes" type="VBoxContainer"]
+script = ExtResource("1_rwkaf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "R: "
+
+[node name="Red" type="SpinBox" parent="HBoxContainer"]
+layout_mode = 2
+max_value = 255.0
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "/ 255"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+text = "G: "
+
+[node name="Green" type="SpinBox" parent="HBoxContainer2"]
+layout_mode = 2
+max_value = 255.0
+
+[node name="Label2" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+text = "/ 255"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer3"]
+layout_mode = 2
+text = "B: "
+
+[node name="Blue" type="SpinBox" parent="HBoxContainer3"]
+layout_mode = 2
+max_value = 255.0
+
+[node name="Label2" type="Label" parent="HBoxContainer3"]
+layout_mode = 2
+text = "/ 255"

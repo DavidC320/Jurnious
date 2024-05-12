@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="ActorResource" load_steps=13 format=3 uid="uid://c2rs8ln2qo8xj"]
+
+[ext_resource type="Resource" uid="uid://db6sv8s7wbkw1" path="res://resources/items/armour_iron.tres" id="1_722dv"]
+[ext_resource type="Script" path="res://scripts/resources/ActorResource.gd" id="1_ml4ms"]
+[ext_resource type="Script" path="res://scripts/resources/drop_slot_resource.gd" id="2_n4xde"]
+[ext_resource type="Resource" uid="uid://bt0jtvf08cup1" path="res://resources/items/shield_iron.tres" id="3_chf5o"]
+[ext_resource type="Resource" uid="uid://cvt4tshat02ya" path="res://resources/items/sword_iron.tres" id="4_3yfyo"]
+[ext_resource type="Resource" uid="uid://dpx6yx5drx111" path="res://resources/items/sword_steel.tres" id="5_o8f6j"]
+[ext_resource type="Script" path="res://scripts/resources/drop_table_resource.gd" id="6_mwia0"]
+
+[sub_resource type="Resource" id="Resource_1508s"]
+script = ExtResource("2_n4xde")
+_item = ExtResource("1_722dv")
+weight = 100
+remove_when_selected = false
+
+[sub_resource type="Resource" id="Resource_dttvw"]
+script = ExtResource("2_n4xde")
+_item = ExtResource("3_chf5o")
+weight = 100
+remove_when_selected = false
+
+[sub_resource type="Resource" id="Resource_4rsqo"]
+script = ExtResource("2_n4xde")
+_item = ExtResource("4_3yfyo")
+weight = 100
+remove_when_selected = false
+
+[sub_resource type="Resource" id="Resource_b4nbi"]
+script = ExtResource("2_n4xde")
+_item = ExtResource("5_o8f6j")
+weight = 10
+remove_when_selected = false
+
+[sub_resource type="Resource" id="Resource_bjaod"]
+script = ExtResource("6_mwia0")
+roll_count = 3
+drop_table = Array[ExtResource("2_n4xde")]([SubResource("Resource_1508s"), SubResource("Resource_dttvw"), SubResource("Resource_4rsqo"), SubResource("Resource_b4nbi")])
+
+[resource]
+script = ExtResource("1_ml4ms")
+name = "Greater Slime"
+drop_table = SubResource("Resource_bjaod")
+health = 15
+defense = 3
+speed = 4.0
+attack = 7
+jump_height = -600
+acenstion_time = 0.5
+decension_time = 0.5
+model = "res://assets/glb/GreaterSlime.glb"

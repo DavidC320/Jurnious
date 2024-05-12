@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="ActorResource" load_steps=11 format=3 uid="uid://d02v2on63cdfa"]
+
+[ext_resource type="Resource" uid="uid://cg0fjtg05aar3" path="res://resources/items/armour_steel.tres" id="1_6e18x"]
+[ext_resource type="Script" path="res://scripts/resources/ActorResource.gd" id="1_7k5di"]
+[ext_resource type="Script" path="res://scripts/resources/drop_slot_resource.gd" id="2_h42ua"]
+[ext_resource type="Resource" uid="uid://ciqqer86p6faf" path="res://resources/items/shield_steel.tres" id="3_ooqts"]
+[ext_resource type="Resource" uid="uid://dpx6yx5drx111" path="res://resources/items/sword_steel.tres" id="4_620cf"]
+[ext_resource type="Script" path="res://scripts/resources/drop_table_resource.gd" id="5_3axli"]
+
+[sub_resource type="Resource" id="Resource_qp5ds"]
+script = ExtResource("2_h42ua")
+_item = ExtResource("1_6e18x")
+weight = 100
+remove_when_selected = false
+
+[sub_resource type="Resource" id="Resource_wxdbm"]
+script = ExtResource("2_h42ua")
+_item = ExtResource("3_ooqts")
+weight = 100
+remove_when_selected = false
+
+[sub_resource type="Resource" id="Resource_js55i"]
+script = ExtResource("2_h42ua")
+_item = ExtResource("4_620cf")
+weight = 0
+remove_when_selected = false
+
+[sub_resource type="Resource" id="Resource_rnvpm"]
+script = ExtResource("5_3axli")
+roll_count = 2
+drop_table = Array[ExtResource("2_h42ua")]([SubResource("Resource_qp5ds"), SubResource("Resource_wxdbm"), SubResource("Resource_js55i")])
+
+[resource]
+script = ExtResource("1_7k5di")
+name = "Greatest Slime"
+drop_table = SubResource("Resource_rnvpm")
+health = 30
+defense = 3
+speed = 4.0
+attack = 10
+jump_height = -600
+acenstion_time = 0.5
+decension_time = 0.5
+model = "res://assets/glb/GreatestSlime.glb"

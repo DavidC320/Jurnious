@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="ActorResource" load_steps=13 format=3 uid="uid://mjv2gs4ea7yp"]
+
+[ext_resource type="Resource" uid="uid://ldttpg021vpf" path="res://resources/items/armour_copper.tres" id="1_otf7g"]
+[ext_resource type="Resource" uid="uid://db6sv8s7wbkw1" path="res://resources/items/armour_iron.tres" id="1_vmwqy"]
+[ext_resource type="Script" path="res://scripts/resources/drop_slot_resource.gd" id="2_j8iym"]
+[ext_resource type="Resource" uid="uid://c7byc6p86oauv" path="res://resources/items/shield_wood.tres" id="3_tf7dj"]
+[ext_resource type="Resource" uid="uid://b172x74emjafi" path="res://resources/items/sword_wood.tres" id="4_5q67p"]
+[ext_resource type="Script" path="res://scripts/resources/drop_table_resource.gd" id="5_my424"]
+[ext_resource type="Script" path="res://scripts/resources/ActorResource.gd" id="6_i36kf"]
+
+[sub_resource type="Resource" id="Resource_rurf3"]
+script = ExtResource("2_j8iym")
+_item = ExtResource("1_otf7g")
+weight = 100
+remove_when_selected = false
+
+[sub_resource type="Resource" id="Resource_ugnps"]
+script = ExtResource("2_j8iym")
+_item = ExtResource("3_tf7dj")
+weight = 100
+remove_when_selected = false
+
+[sub_resource type="Resource" id="Resource_ogm0b"]
+script = ExtResource("2_j8iym")
+_item = ExtResource("4_5q67p")
+weight = 100
+remove_when_selected = false
+
+[sub_resource type="Resource" id="Resource_qhfty"]
+script = ExtResource("2_j8iym")
+_item = ExtResource("1_vmwqy")
+weight = 10
+remove_when_selected = false
+
+[sub_resource type="Resource" id="Resource_gohyf"]
+script = ExtResource("5_my424")
+roll_count = 2
+drop_table = Array[ExtResource("2_j8iym")]([SubResource("Resource_rurf3"), SubResource("Resource_ugnps"), SubResource("Resource_ogm0b"), SubResource("Resource_qhfty")])
+
+[resource]
+script = ExtResource("6_i36kf")
+name = "Slime"
+drop_table = SubResource("Resource_gohyf")
+health = 10
+defense = 3
+speed = 3.0
+attack = 2
+jump_height = -600
+acenstion_time = 0.5
+decension_time = 0.5
+model = "res://assets/glb/Slime.glb"

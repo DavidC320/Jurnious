@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://c7byc6p86oauv"]
+
+[ext_resource type="Script" path="res://scripts/resources/item_resource.gd" id="1_aytjm"]
+[ext_resource type="Texture2D" uid="uid://c1fxd35egeac" path="res://resources/textures/shield.tres" id="1_epemc"]
+
+[resource]
+script = ExtResource("1_aytjm")
+item_name = "Wood Shield"
+item_type = "shield"
+coin_value = 10
+defense = 2
+speed = 0.0
+health = 5
+damage = 5
+color = Color(0.556863, 0.266667, 0, 1)
+_model = null
+pick_up_sprite = ExtResource("1_epemc")

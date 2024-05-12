@@ -1,0 +1,124 @@
+[gd_scene load_steps=7 format=3 uid="uid://cnih3iuax62yr"]
+
+[ext_resource type="PackedScene" uid="uid://cvw7001060x02" path="res://assets/blends/player.blend" id="1_bksio"]
+[ext_resource type="Script" path="res://scripts/menues/create_character.gd" id="1_xdfgj"]
+[ext_resource type="PackedScene" uid="uid://cmeecjlkr6dim" path="res://Addons/rgb_spin_box/rgb_spin_boxes.tscn" id="2_cvqbw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kmnh3"]
+sky_top_color = Color(0.321569, 0.12549, 0, 1)
+sky_horizon_color = Color(0.605882, 0.531373, 0.5, 1)
+sky_energy_multiplier = 1.05
+ground_bottom_color = Color(0.101961, 0, 0, 1)
+ground_horizon_color = Color(0.605882, 0.531373, 0.5, 1)
+
+[sub_resource type="Sky" id="Sky_8hrhh"]
+sky_material = SubResource("ProceduralSkyMaterial_kmnh3")
+
+[sub_resource type="Environment" id="Environment_d75bn"]
+background_mode = 2
+sky = SubResource("Sky_8hrhh")
+
+[node name="CreateCharacter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xdfgj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.608761, -0.197299, 0.768429, 0, 0.968583, 0.24869, -0.793353, -0.151393, 0.589636, 0, 0, 0)
+light_color = Color(0.92549, 0.639216, 0.482353, 1)
+shadow_enabled = true
+directional_shadow_max_distance = 1.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_d75bn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.439216, 0.176471, 0, 1)
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/MarginContainer/SubViewportContainer"]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="HBoxContainer/MarginContainer/SubViewportContainer/SubViewport"]
+current = true
+
+[node name="player" parent="HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Camera3D" instance=ExtResource("1_bksio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.53, -2.421)
+
+[node name="Icosphere" parent="HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Camera3D/player/Armature/Skeleton3D" index="0"]
+transform = Transform3D(1, 3.55271e-15, -1.42109e-14, 1.42109e-14, 1, -1.49012e-08, 0, 1.49012e-08, 1, -3.74597e-15, 2.1215, 0.0493874)
+
+[node name="Armour" parent="HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Camera3D/player/Armature/Skeleton3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.143541)
+
+[node name="Cube" parent="HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Camera3D/player/Armature/Skeleton3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.143541)
+
+[node name="Icosphere_001" parent="HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Camera3D/player/Armature/Skeleton3D" index="3"]
+transform = Transform3D(1, 1.86263e-09, -2.95302e-10, -1.20405e-14, 1, -2.97717e-12, 2.95245e-10, 2.96296e-12, 1, 0.881512, 0.829634, 0.0493874)
+
+[node name="Icosphere_002" parent="HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Camera3D/player/Armature/Skeleton3D" index="4"]
+transform = Transform3D(1, -1.86263e-09, 2.95302e-10, 1.20405e-14, 1, -2.97717e-12, -2.95245e-10, 2.96296e-12, 1, -0.881512, 0.829634, 0.0493874)
+
+[node name="VBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="SkinSpin" parent="HBoxContainer/VBoxContainer" instance=ExtResource("2_cvqbw")]
+layout_mode = 2
+color = Color(0.925797, 0.641082, 0.483606, 1)
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/SkinSpin"]
+layout_mode = 2
+text = "Skin Color"
+
+[node name="ArmourSpin" parent="HBoxContainer/VBoxContainer" instance=ExtResource("2_cvqbw")]
+layout_mode = 2
+color = Color(1, 1, 1, 1)
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/ArmourSpin"]
+layout_mode = 2
+text = "Cloth Color"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NameEdit" type="TextEdit" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Enter Name"
+scroll_fit_content_height = true
+
+[node name="PlayButton" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+
+[editable path="HBoxContainer/MarginContainer/SubViewportContainer/SubViewport/Camera3D/player"]

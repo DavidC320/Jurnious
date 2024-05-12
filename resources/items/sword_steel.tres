@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://dpx6yx5drx111"]
+
+[ext_resource type="Texture2D" uid="uid://3cjooqneajkv" path="res://resources/textures/sword.tres" id="1_2g4tu"]
+[ext_resource type="Script" path="res://scripts/resources/item_resource.gd" id="1_tgnbg"]
+
+[resource]
+script = ExtResource("1_tgnbg")
+item_name = "Steel Sword"
+item_type = "weapon"
+coin_value = 30
+defense = 10
+speed = 2.0
+health = 10
+ammo_type = "none"
+damage = 9
+color = Color(1, 1, 1, 1)
+_model = null
+pick_up_sprite = ExtResource("1_2g4tu")

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://5vxul18navtc"]
+
+[ext_resource type="Script" path="res://scripts/Actors/InteractiveNPC.gd" id="1_usg8v"]
+[ext_resource type="PackedScene" uid="uid://cvw7001060x02" path="res://assets/blends/player.blend" id="2_0gduw"]
+[ext_resource type="PackedScene" uid="uid://c1p0nsxqsmq68" path="res://scenes/Interactive_menues/shop_interface.tscn" id="3_yf5j4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xdwsj"]
+
+[node name="InteractiveNPC" type="StaticBody3D" node_paths=PackedStringArray("menu")]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_usg8v")
+menu = NodePath("ShopInterface")
+
+[node name="player" parent="." instance=ExtResource("2_0gduw")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_xdwsj")
+
+[node name="ShopInterface" parent="." instance=ExtResource("3_yf5j4")]
+visible = false
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8098, 0)
+modulate = Color(1, 1, 0, 1)
+text = "SHOP"
